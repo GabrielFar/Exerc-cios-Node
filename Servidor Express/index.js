@@ -41,3 +41,21 @@ app.get("/Hora", function(req, resp){
         `
     )
 })
+
+var dia = data.getDate()
+
+app.get("/Dia", function(req, resp){
+    
+    resp.send(
+        `
+            <htlm>
+                <head>
+                    <meta charset="utf-8">
+                </head>
+                <body>
+                    <p> Hoje é dia ${dia} </p>
+                </body>
+            </html>
+        `
+    )
+})
