@@ -1,6 +1,17 @@
 const express = require("express")
+const cors = require("cors")
 
 const app = express()
+
+//middle wear (simulação da API do projeto Previsão do Tempo)
+
+app.use(function(req, resp, next){
+    resp.header("Access-Control-Allow-Origin", "*")
+    app.use(cors())
+    next()
+})
+
+//
 
 const porta = 3001
 app.listen(porta, function () {
